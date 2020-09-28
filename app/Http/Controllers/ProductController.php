@@ -12,6 +12,7 @@ class ProductController extends Controller
     public function index()
     {
         $allProducts = Product::inRandomOrder()->get();
+        // $allProducts = Product::all()->random();
         return ['products' => $allProducts];
     }
 
