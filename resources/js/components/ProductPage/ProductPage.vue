@@ -25,7 +25,8 @@ export default {
   // props: ['productid'],
   data() {
     return {
-      imageUrl: 'http://127.0.0.1:8001/images/'
+      // imageUrl: 'http://127.0.0.1:8001/images/',
+      imageUrl: 'https://joshgato-amazoned.herokuapp.com/images/',
     }
   },
   methods: {
