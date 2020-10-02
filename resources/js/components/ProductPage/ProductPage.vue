@@ -25,8 +25,8 @@ export default {
   // props: ['productid'],
   data() {
     return {
-      imageUrl: 'http://127.0.0.1:8000/images/',
-      // imageUrl: 'http://ecommerce.fillycoder.com',
+      // imageUrl: 'http://127.0.0.1:8000/images/',
+      imageUrl: 'https://joshgato-amazoned.herokuapp.com/',
     }
   },
   methods: {

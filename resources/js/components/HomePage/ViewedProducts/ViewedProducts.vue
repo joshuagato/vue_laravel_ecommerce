@@ -46,8 +46,8 @@ export default {
   },
   data() {
     return {
-      imageUrl: 'http://127.0.0.1:8000/images/',
-      // imageUrl: 'http://ecommerce.fillycoder.com/images/',
+      // imageUrl: 'http://127.0.0.1:8000/images/',
+      imageUrl: 'https://joshgato-amazoned.herokuapp.com/images/',
       settings: {
         autoplay: true,
         autoplayHoverPause: true,
