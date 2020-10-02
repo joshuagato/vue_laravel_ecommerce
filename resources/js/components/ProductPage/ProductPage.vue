@@ -26,7 +26,7 @@ export default {
   data() {
     return {
       // imageUrl: 'http://127.0.0.1:8000/images/',
-      imageUrl: 'https://joshgato-amazoned.herokuapp.com/',
+      imageUrl: 'https://joshgato-amazoned.herokuapp.com/images/',
     }
   },
   methods: {
