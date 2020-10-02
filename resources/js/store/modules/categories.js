@@ -2,16 +2,13 @@ const state = {
   categories: '' || JSON.parse(localStorage.getItem('categories')),
 };
 
-const getters = {
-  
-};
-
 const actions = {
   fetchAllCategories: async ({ commit }) => {
     const response = await axios.get('cat/fetchall');
+    const categories = response.data.categories;
 
-    localStorage.setItem('categories', JSON.stringify(response.data.categories));
-    commit('SET_CATEGORIES', response.data.categories);
+    localStorage.setItem('categories', JSON.stringify(categories));
+    commit('SET_CATEGORIES', categories);
   }
 };
 
@@ -24,7 +21,6 @@ const mutations = {
 export default {
   namespaced: true,
   state,
-  getters,
   actions,
   mutations
 };

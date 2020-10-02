@@ -45,23 +45,18 @@ import axios from 'axios';
 import { mapActions, mapState, mapGetters } from 'vuex';
 
 export default {
-  data() {
-    return {
-      
-    }
-  },
-
   methods: {
     ...mapActions({
       fetchAllProductsAction: 'products/fetchAllProducts',
       addToCartAction: 'cart/addToCart',
     }),
+    
     fetchOneCategoryMethod(id) {
       const category = this.categories.find(element => element.id === parseInt(id));
       return category.title;
     },
-    addToCart(productId) {
 
+    addToCart(productId) {
       const inputData = {
         uuid: this.uuid,
         productId: productId

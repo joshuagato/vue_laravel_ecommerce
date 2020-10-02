@@ -19,41 +19,43 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   // props: ['productid'],
   data() {
     return {
-      // imageUrl: 'http://127.0.0.1:8001/images/',
-      imageUrl: 'https://joshgato-amazoned.herokuapp.com/images/',
+      imageUrl: 'http://127.0.0.1:8000/images/',
+      // imageUrl: 'http://ecommerce.fillycoder.com',
     }
   },
   methods: {
     ...mapActions({
-      fetchOneProductAction: 'products/fetchOneProduct'
+      fetchOneProductAction: 'products/fetchOneProduct',
+      addToViewedProductsAction: 'viewedproducts/addToViewedProducts',
+      fetchViewedProductsAction: 'viewedproducts/fetchViewedProducts'
     }),
     fetchOneProduct(id) {
       this.fetchOneProductAction(id);
     }
   },
-
   computed: {
     ...mapState('products', {
       product: state => state.product,
     }),
-    // ...mapGetters({
-    //   product: 'products/product'
-    // })
+    ...mapState('cart', {
+      uuid: state => state.uuid,
+    })
   },
 
   created() {
-    this.fetchOneProduct(this.$route.params.id);
-  },
+    const productId = this.$route.params.id;
+    const uuid = this.uuid;
 
-  mounted() {
-    console.log(this.product)
-  }
+    this.fetchOneProduct(productId);
+    this.addToViewedProductsAction({ uuid, product: productId });
+    this.fetchViewedProductsAction(uuid);
+  },
 }
 </script>
 

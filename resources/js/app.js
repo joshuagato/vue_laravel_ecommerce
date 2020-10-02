@@ -21,8 +21,8 @@ Vue.use(IconsPlugin);
 
 Vue.use(VueTypedJs);
 
-// axios.defaults.baseURL = 'http://127.0.0.1:8000/api';
-axios.defaults.baseURL = 'https://joshgato-amazoned.herokuapp.com/api';
+axios.defaults.baseURL = 'http://127.0.0.1:8000/api';
+// axios.defaults.baseURL = 'http://ecommerce.fillycoder.com/api';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';

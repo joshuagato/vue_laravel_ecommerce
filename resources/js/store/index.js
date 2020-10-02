@@ -4,6 +4,7 @@ import { auth } from './modules/auth';
 import products from './modules/products';
 import categories from './modules/categories';
 import cart from './modules/cart';
+import viewedproducts from './modules/viewedproducts';
 
 // Load Vuex
 Vue.use(Vuex);
@@ -14,6 +15,7 @@ export default new Vuex.Store({
     auth,
     products,
     categories,
-    cart
+    cart,
+    viewedproducts
   }
 })

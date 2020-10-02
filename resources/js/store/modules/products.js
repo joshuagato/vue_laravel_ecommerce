@@ -1,6 +1,6 @@
 const state = {
-  products: [] || JSON.parse(localStorage.getItem('products')),
-  categoryproducts: [] || JSON.parse(localStorage.getItem('categoryproducts')),
+  products: '' || JSON.parse(localStorage.getItem('products')),
+  categoryproducts: '' || JSON.parse(localStorage.getItem('categoryproducts')),
   // product: {} || JSON.parse(localStorage.getItem('product'))
   product: ''
 };
@@ -13,47 +13,54 @@ const getters = {
 
 const actions = {
   fetchAllProducts: async ({ commit }) => {
-    let response = await axios.get('prod/fetchall');
+    const response = await axios.get('prod/fetchall');
+    const products = response.data.products;
     
-    localStorage.setItem('products', JSON.stringify(response.data.products));
-    commit('SET_PRODUCTS_SUCCESS', response.data.products);
+    localStorage.setItem('products', JSON.stringify(products));
+    commit('SET_PRODUCTS_SUCCESS', products);
   },
 
   fetchCategoryProducts: async ({ commit }, inputData) => {
-    let response = await axios.post('prod/fetchcatprod', inputData);
-    
-    localStorage.setItem('categoryproducts', JSON.stringify(response.data.categoryproducts));
-    commit('SET_CATPRODUCTS_SUCCESS', response.data.categoryproducts);
+    const response = await axios.post('prod/fetchcatprod', inputData);
+    const categoryproducts = response.data.categoryproducts;
+
+    localStorage.setItem('categoryproducts', JSON.stringify(categoryproducts));
+    commit('SET_CATPRODUCTS_SUCCESS', categoryproducts);
   },
 
   addNewProduct: async ({}, inputData) => {
-    let response = await axios.post('prod/store', inputData);
+    const response = await axios.post('prod/store', inputData);
+    const success = response.data.success;
 
-    if (response.data.success) return response.data.success;
+    if (success) return success;
   },
 
   fetchOneProduct: async ({ commit }, productId) => {
-    let response = await axios.get('prod/fetchone/' + productId);
+    const response = await axios.get(`prod/fetchone/${productId}`);
     
     // localStorage.setItem('product', JSON.stringify(response.data.product));
     commit('SET_PRODUCT_SUCCESS', response.data.product);
   },
 
   updateProduct: async ({ commit }, { inputData, productId }) => {
-    let response = await axios.post('prod/updateone/' + productId, inputData);
+    const response = await axios.post(`prod/updateone/${productId}`, inputData);
+    const success = response.data.success;
+    const product = response.data.product;
 
-    commit('SET_PRODUCT_SUCCESS', response.data.product);
-    if (response.data.success) return response.data.success;
+    if (success) {
+      commit('SET_PRODUCT_SUCCESS', product);
+      return success;
+    }
   },
 
   deleteProduct: async ({ dispatch }, productId) => {
-    let response = await axios.post('prod/deleteone/' + productId);
+    const response = await axios.post(`prod/deleteone/${productId}`);
+    const success = response.data.success;
 
-    if (response.data.success) {
-      const inputData = { category: 0 }
-
+    if (success) {
+      const inputData = { category: 0 };
       dispatch('fetchCategoryProducts', inputData);
-      return response.data.success;
+      return success;
     };
   }
 };

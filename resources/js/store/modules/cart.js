@@ -4,10 +4,6 @@ const state = {
   cartitems: '' || JSON.parse(localStorage.getItem('cartitems')),
 };
 
-const getters = {
-  
-};
-
 const actions = {
   createCart: async ({ dispatch }, inputData) => {
     const response = await axios.post('cart/createcart', inputData);
@@ -69,7 +65,6 @@ const actions = {
       return response.data.success;
     };
   },
-
 };
 
 const mutations = {
@@ -89,7 +84,6 @@ const mutations = {
 export default {
   namespaced: true,
   state,
-  getters,
   actions,
   mutations
 };
