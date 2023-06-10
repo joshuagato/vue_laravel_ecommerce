@@ -1,7 +1,7 @@
 <template>
-  <nav v-if="this.$route.name !== 'dashboard'" class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" 
+  <nav v-if="this.$route.name !== 'dashboard'" class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark"
     id="rbNavbar">
-    <router-link id="brand-name" class="navbar-brand mr-4" to="/" active-class="active" exact="">BBcom</router-link>
+    <router-link id="brand-name" class="navbar-brand mr-4" to="/" active-class="active" exact="">Amazoned</router-link>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
         @click="changeValue = !changeValue" :class="{'change': changeValue}">
@@ -24,10 +24,10 @@
           </li>
         </section>
         <li class="nav-item dropdown mx-3" v-if="authenticated === true || authenticated === 'true'">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
-            data-toggle="dropdown" aria-haspopup="true" 
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true"
               aria-expanded="false">{{ user.name }}</a>
-          
+
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="#">Profile</a>
             <div class="dropdown-divider"></div>
@@ -75,7 +75,7 @@ export default {
       changeValue: false,
     };
   },
-  
+
   computed: {
     ...mapState('auth', {
       // token: state => state.token,
@@ -103,7 +103,7 @@ export default {
         // this.$router.replace('/');
       })
       .catch(error => {
-        // 
+        //
       });
     },
     inNavigation(event) {
@@ -116,7 +116,7 @@ export default {
   },
 
   mounted() {
-    
+
   }
 }
 </script>
@@ -201,7 +201,7 @@ export default {
 
 @media (min-width: 992px) {
   // #navbarSupportedContent {
-    
+
   // }
 }
 

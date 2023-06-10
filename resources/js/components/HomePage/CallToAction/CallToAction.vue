@@ -1,8 +1,8 @@
 <template>
   <header class="moveFromTop">
-    <span class="welcome moveIntroFromBottom">Introducing BBCOM</span>
+    <span class="welcome moveIntroFromBottom">Introducing Amazoned</span>
     <vue-typed-js :loop="true" :showCursor="true" :typeSpeed="40"
-      :strings="['The home of anything you want to buy...', 
+      :strings="['The home of anything you want to buy...',
       'Affordable and rational prices...', '...and many more.']">
       <span class="typing moveTypedFromBottom"></span>
     </vue-typed-js>

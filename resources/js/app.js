@@ -21,8 +21,11 @@ Vue.use(IconsPlugin);
 
 Vue.use(VueTypedJs);
 
-// axios.defaults.baseURL = 'http://127.0.0.1:8001/api';
-axios.defaults.baseURL = 'https://joshgato-amazoned.herokuapp.com/api';
+const dev = 'http://127.0.0.1:8000/api';
+const prod = 'https://joshgato-amazoned.herokuapp.com/api';
+
+const baseUrl = process.env.NODE_ENV === 'development' ? dev : prod;
+axios.defaults.baseURL = baseUrl;
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
@@ -30,19 +33,19 @@ import 'bootstrap-vue/dist/bootstrap-vue.css';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 
-import { faSearch, faPlusSquare, faLock, faUser, faUsers, faUserPlus, faUnlockAlt, faUnlock, 
+import { faSearch, faPlusSquare, faLock, faUser, faUsers, faUserPlus, faUnlockAlt, faUnlock,
   faDotCircle, faMoneyBill, faUserSecret, faTrash, faCartArrowDown, faLongArrowAltUp, faChevronUp,
   faShoppingCart, faAnchor, faCubes, faBars, faSignOutAlt, faHome, faFireAlt, faFolder, faHistory,
-  faPen, 
+  faPen,
 }
   from '@fortawesome/free-solid-svg-icons';
 
   import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 
-library.add(faSearch, faPlusSquare, faLock, faUser, faUsers, faUserPlus, faUnlockAlt, faUnlock, 
+library.add(faSearch, faPlusSquare, faLock, faUser, faUsers, faUserPlus, faUnlockAlt, faUnlock,
   faDotCircle, faMoneyBill, faUserSecret, faTrash, faCartArrowDown, faLongArrowAltUp, faChevronUp,
     faShoppingCart, faAnchor, faCubes, faBars, faYoutube, faSignOutAlt, faHome, faFireAlt, faFolder, faHistory,
-    faPen, 
+    faPen,
   );
 
 Vue.component('FontAwesomeIcon', FontAwesomeIcon);

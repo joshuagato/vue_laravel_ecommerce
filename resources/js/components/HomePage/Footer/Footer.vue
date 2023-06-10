@@ -4,11 +4,11 @@
             <div class="row text-light py-4">
                 <div id="aboutus" class="col-lg-4 col-md-6 col-sm-6 col-12">
                     <h5 class="pb-3">About Us</h5>
-                    <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+                    <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                         sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                 </div>
                 <div class="col-lg-2 col-md-3 col-sm-6 col-6">
@@ -33,17 +33,17 @@
                     <h5 class="pb-3">Get In Touch</h5>
                     <form action="" @submit.prevent="" id="contact-form">
                         <div id="first-form-div" class="form-group form-div">
-                            <input type="text" name="" id="name-input" required autocomplete="off" 
+                            <input type="text" name="" id="name-input" required autocomplete="off"
                                 placeholder="Your Name">
                             <label for="name-input" class="label">Name</label>
                         </div>
                         <div class="form-group form-div">
-                            <input type="email" name="" id="email-input" required autocomplete="off" 
+                            <input type="email" name="" id="email-input" required autocomplete="off"
                                 placeholder="Your Email">
                             <label for="email-input" class="label">Email</label>
                         </div>
                         <div class="form-group form-div">
-                          <input type="text" name="" id="message-input" required autocomplete="off" 
+                          <input type="text" name="" id="message-input" required autocomplete="off"
                             placeholder="Your Message">
                           <label for="message-input" class="label">Message</label>
                         </div>
@@ -53,8 +53,8 @@
             </div>
             <div id="copyright" class="row">
               <div class="col text-center text-light border-top pt">
-                <p>Copyright &copy; {{ date }} By 
-                  <a href="https://fillycoder.com" target="_blank">FILLYCODER LTD</a>.
+                <p>Copyright &copy; 2019 - {{ date }} By
+                  <a href="https://fillycoder.com" target="_blank">Joshua Gato</a>.
                 </p>
               </div>
             </div>
