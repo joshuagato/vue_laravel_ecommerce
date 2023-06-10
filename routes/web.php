@@ -26,7 +26,7 @@ Route::get('/clear-cache', function () {
   return 'DONE'; //Return anything
 });
 
-Route::get('/cleareverything', function () {
+Route::get('/clear-everything', function () {
   $clearcache = Artisan::call('cache:clear');
   echo "Cache cleared<br>";
 
