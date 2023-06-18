@@ -22,7 +22,8 @@ Vue.use(IconsPlugin);
 Vue.use(VueTypedJs);
 
 const dev = 'http://127.0.0.1:8000/api';
-const prod = 'https://joshgato-amazoned.herokuapp.com/api';
+// const prod = 'https://joshgato-amazoned.herokuapp.com/api';
+const prod = 'http://joshua-gato-amazoned.c1.is/api';
 
 const baseUrl = process.env.NODE_ENV === 'development' ? dev : prod;
 axios.defaults.baseURL = baseUrl;
