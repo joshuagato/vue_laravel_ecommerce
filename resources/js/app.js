@@ -4,15 +4,15 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-import { router } from './router';
-import store from './store';
-import axios from 'axios';
-import App from './components/App';
+require("./bootstrap");
+import { router } from "./router";
+import store from "./store";
+import axios from "axios";
+import App from "./components/App";
 
-import Vue from 'vue';
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
-import VueTypedJs from 'vue-typed-js';
+import Vue from "vue";
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
+import VueTypedJs from "vue-typed-js";
 
 // Install BootstrapVue
 Vue.use(BootstrapVue);
@@ -21,38 +21,85 @@ Vue.use(IconsPlugin);
 
 Vue.use(VueTypedJs);
 
-const dev = 'http://127.0.0.1:8000/api';
+// const dev = "http://127.0.0.1:8000/api";
 // const prod = 'https://joshgato-amazoned.herokuapp.com/api';
-const prod = 'http://joshua-gato-amazoned.c1.is/api';
+// const prod = "http://joshua-gato-amazoned.c1.is/api";
 
-const baseUrl = process.env.NODE_ENV === 'development' ? dev : prod;
+// const baseUrl = process.env.NODE_ENV === "development" ? dev : prod;
+const baseUrl = process.env.MIX_API_URL;
+
 axios.defaults.baseURL = baseUrl;
 
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-vue/dist/bootstrap-vue.css';
+export const IMAGE_URL = process.env.MIX_API_URL;
 
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
-import { faSearch, faPlusSquare, faLock, faUser, faUsers, faUserPlus, faUnlockAlt, faUnlock,
-  faDotCircle, faMoneyBill, faUserSecret, faTrash, faCartArrowDown, faLongArrowAltUp, faChevronUp,
-  faShoppingCart, faAnchor, faCubes, faBars, faSignOutAlt, faHome, faFireAlt, faFolder, faHistory,
-  faPen,
-}
-  from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
 
-  import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import {
+    faSearch,
+    faPlusSquare,
+    faLock,
+    faUser,
+    faUsers,
+    faUserPlus,
+    faUnlockAlt,
+    faUnlock,
+    faDotCircle,
+    faMoneyBill,
+    faUserSecret,
+    faTrash,
+    faCartArrowDown,
+    faLongArrowAltUp,
+    faChevronUp,
+    faShoppingCart,
+    faAnchor,
+    faCubes,
+    faBars,
+    faSignOutAlt,
+    faHome,
+    faFireAlt,
+    faFolder,
+    faHistory,
+    faPen
+} from "@fortawesome/free-solid-svg-icons";
 
-library.add(faSearch, faPlusSquare, faLock, faUser, faUsers, faUserPlus, faUnlockAlt, faUnlock,
-  faDotCircle, faMoneyBill, faUserSecret, faTrash, faCartArrowDown, faLongArrowAltUp, faChevronUp,
-    faShoppingCart, faAnchor, faCubes, faBars, faYoutube, faSignOutAlt, faHome, faFireAlt, faFolder, faHistory,
-    faPen,
-  );
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
-Vue.component('FontAwesomeIcon', FontAwesomeIcon);
+library.add(
+    faSearch,
+    faPlusSquare,
+    faLock,
+    faUser,
+    faUsers,
+    faUserPlus,
+    faUnlockAlt,
+    faUnlock,
+    faDotCircle,
+    faMoneyBill,
+    faUserSecret,
+    faTrash,
+    faCartArrowDown,
+    faLongArrowAltUp,
+    faChevronUp,
+    faShoppingCart,
+    faAnchor,
+    faCubes,
+    faBars,
+    faYoutube,
+    faSignOutAlt,
+    faHome,
+    faFireAlt,
+    faFolder,
+    faHistory,
+    faPen
+);
 
-window.Vue = require('vue');
+Vue.component("FontAwesomeIcon", FontAwesomeIcon);
 
+window.Vue = require("vue");
 
 /**
  * The following block of code may be used to automatically register your
@@ -73,16 +120,16 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-if (process.env.MIX_ENV_MODE === 'production') {
-  Vue.config.devtools = false;
-  Vue.config.debug = false;
-  Vue.config.silent = true;
+if (process.env.MIX_ENV_MODE === "production") {
+    Vue.config.devtools = false;
+    Vue.config.debug = false;
+    Vue.config.silent = true;
 }
 
 const app = new Vue({
-  el: '#app',
-  router,
-  store,
-  mode: 'production',
-  ...App
+    el: "#app",
+    router,
+    store,
+    mode: "production",
+    ...App
 });
